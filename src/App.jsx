@@ -142,14 +142,6 @@ function App() {
     }
 
     setIdeaForm({ title: '', description: '' })
-    setIdeas((prev) => [
-      {
-        ...payload,
-        id: crypto.randomUUID(),
-        created_at: new Date().toISOString(),
-      },
-      ...prev,
-    ])
 
     const { data: refreshedIdeas } = await supabase
       .from('ideas')
